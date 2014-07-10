@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,8 +11,8 @@ import static org.junit.Assert.*;
 
 public class StreamExampleTest {
 
-    public static final int EXPECTED = 25000;
-    public static final int SIZE = 50000;
+    public static final int NUMBER_OF_BOOKS = 5000000;
+    public static final int NUMBER_OF_ROMANCE = NUMBER_OF_BOOKS / 2;
 
     private List<Book> books;
 
@@ -30,7 +29,7 @@ public class StreamExampleTest {
 
                 return newBook;
             }
-        ).limit(SIZE).
+        ).limit(NUMBER_OF_BOOKS).
         collect(Collectors.toList());
     }
 
@@ -38,8 +37,7 @@ public class StreamExampleTest {
     public void testCountRomanceUsingStream() {
 
         long count = StreamExample.countRomanceUsingStream(books.stream());
-        assertEquals(EXPECTED, count);
-
+        assertEquals(NUMBER_OF_ROMANCE, count);
 
     }
 
@@ -47,7 +45,7 @@ public class StreamExampleTest {
     public void testCountRomanceUsingParallelStream() {
 
         long count = StreamExample.countRomanceUsingStream(books.parallelStream());
-        assertEquals(EXPECTED, count);
+        assertEquals(NUMBER_OF_ROMANCE, count);
 
     }
 
@@ -55,7 +53,7 @@ public class StreamExampleTest {
     public void testCountRomanceUsingList() {
 
         long count = StreamExample.countRomanceUsingList(books);
-        assertEquals(EXPECTED, count);
+        assertEquals(NUMBER_OF_ROMANCE, count);
 
     }
 
@@ -75,9 +73,7 @@ public class StreamExampleTest {
 
     private long measureTime(Runnable runnable) {
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 20; i++) {
-            runnable.run();
-        }
+        runnable.run();
         long endTime = System.currentTimeMillis();
 
         return endTime - startTime;
