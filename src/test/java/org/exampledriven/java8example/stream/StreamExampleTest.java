@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.exampledriven.java8example.StopWatch.measureTime;
 import static org.junit.Assert.*;
 
 public class StreamExampleTest {
@@ -71,14 +72,6 @@ public class StreamExampleTest {
         long timeListStream = measureTime(() -> testCountRomanceUsingList());
         System.out.println("timeListStream : " + timeListStream);
 
-    }
-
-    private long measureTime(Runnable runnable) {
-        long startTime = System.currentTimeMillis();
-        runnable.run();
-        long endTime = System.currentTimeMillis();
-
-        return endTime - startTime;
     }
 
 }

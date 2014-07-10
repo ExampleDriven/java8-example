@@ -1,6 +1,8 @@
 java8-example
 =============
 
+This example includes :
+
 - Lambda expressions
     - Method references
     - Functional interfaces
@@ -9,5 +11,10 @@ java8-example
     - Parallel stream
     - Terminal operation
     - Filter
-- 
+- Time
+    - Calendar.Builder
+    - LocalDate
+- String
+    - String.join
+    - StringJoiner
 
