@@ -1,4 +1,4 @@
-package org.exampledriven.java8example;
+package org.exampledriven.java8example.stream;
 
 import java.util.List;
 import java.util.stream.Stream;

@@ -1,5 +1,7 @@
-package org.exampledriven.java8example;
+package org.exampledriven.java8example.stream;
 
+import org.exampledriven.java8example.stream.Book;
+import org.exampledriven.java8example.stream.StreamExample;
 import org.junit.Before;
 import org.junit.Test;
 
