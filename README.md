@@ -1,6 +1,11 @@
 java8-example
 =============
 
+This is the source code for the blog post 
+
+http://exampledriven.wordpress.com/2014/10/03/java-8-date-time-api-example/
+
+
 This example covers the following :
 
 - Lambda expressions
