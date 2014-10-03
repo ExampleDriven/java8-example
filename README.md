@@ -1,7 +1,7 @@
 java8-example
 =============
 
-This example includes :
+This example covers the following :
 
 - Lambda expressions
     - Method references
@@ -18,3 +18,15 @@ This example includes :
     - String.join
     - StringJoiner
 
+inspiration was gained from :
+
+http://marxsoftware.blogspot.co.uk/2014/04/dubious-features-of-jdk-8.html
+http://openjdk.java.net/jeps/155
+http://marxsoftware.blogspot.hu/2014/03/jdk-8-is-here.html
+http://www.mscharhag.com/2014/03/java-8-string-joining.html
+http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#section3
+http://docs.oracle.com/javase/tutorial/java/generics/genTypes.html
+http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html
+http://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html
+http://docs.oracle.com/javase/tutorial/datetime/iso/clock.html
+http://marxsoftware.blogspot.hu/2013/05/jdk-8-calendar-builder.html

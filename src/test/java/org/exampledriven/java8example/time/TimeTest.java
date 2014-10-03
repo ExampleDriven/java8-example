@@ -4,29 +4,52 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.ZoneId;
+import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class TimeTest {
 
     @Test
-    public void testGregorianCalendar() {
-        GregorianCalendar gregorianCalendar = new GregorianCalendar(1978, 12, 31);
-        System.out.println(gregorianCalendar);
+    public void gregorianCalendar_constuctorParameters() {
+        GregorianCalendar gregorianCalendar = new GregorianCalendar(1978, Calendar.DECEMBER, 31);
+
+        System.out.println(gregorianCalendar.getTime());
 
     }
 
     @Test
-    public void testCalendar() {
+    public void gregorianCalendar_setters() {
+        GregorianCalendar gregorianCalendar = new GregorianCalendar();
+        gregorianCalendar.set(Calendar.YEAR,1978);
+        gregorianCalendar.set(Calendar.MONTH,Calendar.DECEMBER);
+        gregorianCalendar.set(Calendar.DAY_OF_MONTH,31);
+        gregorianCalendar.set(Calendar.MINUTE,0);
+        gregorianCalendar.set(Calendar.SECOND, 0);
+        gregorianCalendar.set(Calendar.MILLISECOND, 0);
+
+        assertEquals(new GregorianCalendar(1978, Calendar.DECEMBER, 31).getTime(), gregorianCalendar.getTime());
+
+    }
+
+    @Test
+    public void calendar_setters() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(1978, Calendar.DECEMBER, 31);
-        System.out.println(calendar);
+        calendar.set(Calendar.YEAR,1978);
+        calendar.set(Calendar.MONTH,Calendar.DECEMBER);
+        calendar.set(Calendar.DAY_OF_MONTH,31);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        assertEquals(new GregorianCalendar(1978, Calendar.DECEMBER, 31).getTime(), calendar.getTime());
 
     }
 
     @Test
-    public void testCalendarBuilder() {
+    public void calendarBuilder_setters() {
 
         Calendar calendar = new Calendar.Builder()
                 .set(Calendar.YEAR, 1978)
@@ -34,15 +57,24 @@ public class TimeTest {
                 .set(Calendar.MONTH, Calendar.DECEMBER)
                 .build();
 
-        System.out.println(calendar);
+        assertEquals(new GregorianCalendar(1978, Calendar.DECEMBER, 31).getTime(), calendar.getTime());
+
+    }
+    @Test
+    public void calendarBuilder_setter() {
+
+        Calendar calendar = new Calendar.Builder()
+                .setFields(Calendar.YEAR, 1978, Calendar.DAY_OF_MONTH, 31, Calendar.MONTH, Calendar.DECEMBER)
+                .build();
+
+        assertEquals(new GregorianCalendar(1978, Calendar.DECEMBER, 31).getTime(), calendar.getTime());
 
     }
 
     @Test
-    public void testLocalDate() {
+    public void localDate() {
         LocalDate localDate = LocalDate.of(1978, Month.DECEMBER, 31);
-
-        System.out.println(localDate);
+        assertEquals(new GregorianCalendar(1978, Calendar.DECEMBER, 31).getTime(), Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
 
     }
 
