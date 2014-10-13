@@ -26,6 +26,7 @@ public class TimeTest {
         gregorianCalendar.set(Calendar.YEAR,1978);
         gregorianCalendar.set(Calendar.MONTH,Calendar.DECEMBER);
         gregorianCalendar.set(Calendar.DAY_OF_MONTH,31);
+        gregorianCalendar.set(Calendar.HOUR_OF_DAY,0);
         gregorianCalendar.set(Calendar.MINUTE,0);
         gregorianCalendar.set(Calendar.SECOND, 0);
         gregorianCalendar.set(Calendar.MILLISECOND, 0);
@@ -40,6 +41,7 @@ public class TimeTest {
         calendar.set(Calendar.YEAR,1978);
         calendar.set(Calendar.MONTH,Calendar.DECEMBER);
         calendar.set(Calendar.DAY_OF_MONTH,31);
+        calendar.set(Calendar.HOUR_OF_DAY,0);
         calendar.set(Calendar.MINUTE,0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
